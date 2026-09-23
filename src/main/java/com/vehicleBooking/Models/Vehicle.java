@@ -1,4 +1,4 @@
-package com.vehicleBooking.DTOs;
+package com.vehicleBooking.Models;
 
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -18,9 +18,6 @@ public class Vehicle {
     private String model;
     private int year;
     private double price;
-    private String bookingAmount;
-    private boolean available;
-    private String imageUrl;
+    private double bookingAmount;
     private int remainingUnits;
-
 }
