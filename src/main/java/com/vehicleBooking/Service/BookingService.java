@@ -66,12 +66,12 @@ public class BookingService{
                     new BookingNotFoundEx("Booking not found"));
 
         if (!booking.getUser().getId().equals(userId)) {
-            throw new RuntimeException("You cannot cancel this booking");
+            throw new BookingNotFoundEx("You cannot cancel this booking");
         }
 
         // Prevent cancelling an already cancelled booking
         if (booking.getBookingStatus() == BookingStatus.CANCELLED) {
-            throw new RuntimeException("Booking is already cancelled");
+            throw new IllegalArgumentException("Booking is already cancelled");
         }
 
         // Don't allow cancellation after completion
